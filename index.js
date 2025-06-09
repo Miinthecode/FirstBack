@@ -7,7 +7,9 @@ require ('./src/models')          // para sincronizar o banco de dados que foi c
 const produtosRoutes = require('./src/routes/produtos')        // importar as rotas
 const usersRoutes = require('./src/routes/users')
 const authRoutes = require('./src/routes/auth')
+const cors = require('cors')
 
+app.use(cors())   //se não tiver, o site não consegue se comunicar com api
 app.use(express.json())
 app.use(produtosRoutes)
 app.use(usersRoutes)
